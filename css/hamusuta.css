@@ -1,0 +1,66 @@
+html {
+    background-color: rgb(209, 209, 209);
+}
+
+body {
+    padding: 0px;
+}
+
+#backgroundPicture{
+    height: 70px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+#homePageUINavigationBar {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(126, 126, 126);
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    box-shadow: 6px 3px 13px 2px #000000b0;
+}
+
+#homePageUINavigationBar img {
+    height: 80px;
+    margin: auto auto;
+    float: left;
+}
+
+#homePageUINavigationBar form {
+    margin-top: 25px;
+    height: 40px;
+    width: 250px;
+    float: right;
+}
+
+#homePageUINavigationBar input {
+    width: 120px;
+    border-radius: 50px;
+    border: 2px solid rgb(55, 62, 63);
+    background: rgb(253, 242, 200);
+    transition: .3s linear;
+    float: left;
+}
+
+#homePageUINavigationBar input:focus {
+    width: 140px;
+    color: #324b4e;
+}
+
+#homePageUINavigationBar button {
+    width: 60px;
+    float: left;
+    top: -2px;
+    border-radius: 25px;
+    border: 1.5px solid rgb(253, 242, 200);
+    background: #400302;
+    text-align: center;
+    color: rgb(236, 236, 236);
+}
+
+#homePageUINavigationBar button:after {
+    color: #324b4e;
+}
