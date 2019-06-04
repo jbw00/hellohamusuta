@@ -64,3 +64,9 @@ body {
 #homePageUINavigationBar button:after {
     color: #324b4e;
 }
+
+#carouselBar {
+    width: 100%;
+    margin-top: 80px;
+    background-color: #F7E9C4;
+}
