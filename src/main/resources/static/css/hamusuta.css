@@ -1,6 +1,7 @@
 html {
     background-color: rgb(209, 209, 209);
     padding: 0px;
+    height: 1600px;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
     width: 100%;
 }
 
-#backgroundPicture{
+.backgroundPicture{
     position: fixed;
     width: 100%;
     z-index: 50;
