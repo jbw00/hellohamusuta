@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/wangEditor.css">
+    <link rel="stylesheet" href="../css/creativity.css">
+</head>
+
+<body>
+
+    <!-- 顶部图片 -->
+    <div class="row col-md-12 ">
+        <img class="backgroundPicture" src="../img/background.jpg" title="hamuusta!" alt="backgroundpicture">
+    </div>
+
+    <!-- 文章基础信息 -->
+    <form action="">
+        <div class="row">
+            <!-- 标题 -->
+            <div class="col-md-2 col-md-push-1">
+                <div class="input-group">
+                    <span class="input-group-addon">标题</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+                </div>
+            </div>
+            <!-- 前言 -->
+            <div class="col-md-3 col-md-push-1">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="...">
+                    </span>
+                    <span class="input-group-addon">前言</span>
+                    <input type="text" class="form-control" aria-label="...">
+                </div>
+            </div>
+            <!-- 音乐链接 -->
+            <div class="col-md-3 col-md-push-1">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="...">
+                    </span>
+                    <span class="input-group-addon">音乐</span>
+                    <input type="text" class="form-control" aria-label="...">
+                </div>
+            </div>
+            <div class="col-md-1 col-md-push-1">
+                    <!-- 类型 -->
+                    <div class="dropdown col-md-3 col-md-push-1">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            文章类型
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li>日语</li>
+                            <li role="separator" class="divider"></li>
+                            <li>音乐</li>
+                            <li role="separator" class="divider"></li>
+                            <li>技术</li>
+                            <li role="separator" class="divider"></li>
+                            <li>小说</li>
+                            <li role="separator" class="divider"></li>
+                            <li>摄影</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </form>
+
+
+
+
+    <!-- 编辑器 -->
+    <div id="text" class="row col-md-10 col-md-push-1">
+        <!--可使用 min-height 实现编辑区域自动增加高度-->
+        <p>种点 <b>瓜子</b> 吧~！</p>
+    </div>
+    <div id="toolbar" class="row col-md-6 col-md-push-3"></div>
+
+
+    <!-- 依赖顺序不要随意改变 -->
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/wangEditor.js"></script>
+    <script type="text/javascript" src="../js/creativity.js"></script>
+</body>
+
+</html>
