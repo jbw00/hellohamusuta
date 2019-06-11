@@ -4,8 +4,6 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 import axios from 'axios' //引入axios
-import "bootstrap" //引入bootstrap.js文件
-import "bootstrap/dist/css/bootstrap.css" //引入bootstrap.css文件
 import ElementUI from 'element-ui' //引入element
 import 'element-ui/lib/theme-chalk/index.css' //引入element.css文件
 
