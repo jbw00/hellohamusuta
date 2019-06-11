@@ -60,6 +60,7 @@ export default {
   z-index: 50;
   height: 60px;
   bottom: 0px;
+  z-index: 2147483647;
 }
 
 /* 消除routerlink下划线 */

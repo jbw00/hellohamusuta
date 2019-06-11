@@ -2,12 +2,19 @@
   <div id="app">
     <router-link to="/"/>
     <router-view/>
-    <div class="backg"></div>
+    <!-- <BackGround/> -->
   </div>
 </template>
 
 <script>
-export default {};
+// import BackGround from "@/components/BackGround.vue";
+
+export default {
+  name: "app",
+  components: {
+    // BackGround
+  }
+};
 </script>
 
 <style>
@@ -17,10 +24,9 @@ export default {};
   margin: -8px;
   padding: 0px;
 }
- .backg{
-    width: 100%;
-    height: 1600px;
-    background: url('./assets/backg.jpg') center center repeat;
-    background-size: 100px auto;
-  }
+
+body {
+  background: url("./assets/backg.jpg") center center repeat;
+  background-size: 100px auto;
+}
 </style>

@@ -34,10 +34,13 @@ export default {
 #editorElem {
   text-align: left;
   margin-top: 150px;
+  margin-left: 150px;
+  width: 1200px;
 }
 
-.w-e-text-container{
-    height: 700px !important;
+.w-e-text-container {
+  height: 700px !important;
+  background-color: white;
 }
 </style>
 

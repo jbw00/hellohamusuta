@@ -9,6 +9,7 @@
         alt="backgroundpicture"
       >
     </div>
+    
   </div>
 </template>
 

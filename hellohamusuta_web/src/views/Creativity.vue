@@ -1,10 +1,13 @@
 <template>
   <!-- 编辑页面 -->
-  <div id="creativity">
+  <div id="creativity" style="background-image:url('../assets/backg.jpg')">
     <TopGroundPicture/>
     <NavBar/>
     <el-input class="input" placeholder="请输入标题" v-model="input1">
       <template slot="prepend">标题</template>
+    </el-input>
+    <el-input class="input" placeholder="请输入封面图片链接" v-model="input1">
+      <template slot="prepend">图片</template>
     </el-input>
     <el-input class="input" placeholder="请输入前言" v-model="input2">
       <template slot="prepend">
@@ -68,15 +71,16 @@ export default {
 
 <style scoped lang = "stylus">
 .input {
-  top: 100px;
-  width: 380px;
-  margin-left: 50PX;
+  top: 80px;
+  width: 600px;
+  margin-left: 80PX;
+  margin-top: 20px;
 }
 
 .select {
   top: 100px;
   width: 120px;
-  margin-left: 50PX;
+  margin-left: 80PX;
 }
 </style>
 
