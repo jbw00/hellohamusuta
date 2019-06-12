@@ -51,7 +51,7 @@ export default {
       picture: null
     };
   },
-  created() {
+  mounted() {
     this.getArticleType();
   },
   methods: {
