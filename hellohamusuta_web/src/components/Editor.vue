@@ -1,7 +1,6 @@
 <template>
   <div id="editor">
     <div id="editorElem"></div>
-    <button v-on:click="getContent">查看内容</button>
   </div>
 </template>
 
@@ -15,11 +14,7 @@ export default {
       editorContent: ""
     };
   },
-  methods: {
-    getContent: function() {
-      alert(this.editorContent);
-    }
-  },
+  methods: {},
   mounted() {
     var editor = new E("#editorElem");
     editor.customConfig.onchange = html => {
@@ -33,7 +28,7 @@ export default {
 <style scope lang="stylus">
 #editorElem {
   text-align: left;
-  margin-top: 150px;
+  margin-top: 180px;
   margin-left: 150px;
   width: 1200px;
 }
@@ -41,6 +36,7 @@ export default {
 .w-e-text-container {
   height: 700px !important;
   background-color: white;
+  z-index: 10;
 }
 </style>
 

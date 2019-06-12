@@ -19,7 +19,7 @@
         <router-view/>
       </el-menu-item>
       <el-menu-item index="3">
-        <router-link to="/About">音乐</router-link>
+        <router-link to="/">音乐</router-link>
         <router-view/>
       </el-menu-item>
       <el-submenu index="4">
