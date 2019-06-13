@@ -4,7 +4,9 @@ import com.hamusuta.hellohamusuta.model.Reply;
 import com.hamusuta.hellohamusuta.model.ReplyExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ReplyMapper {
     long countByExample(ReplyExample example);
 

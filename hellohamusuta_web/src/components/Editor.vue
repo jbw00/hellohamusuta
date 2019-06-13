@@ -28,7 +28,6 @@ export default {
 <style scope lang="stylus">
 #editorElem {
   text-align: left;
-  margin-top: 180px;
   margin-left: 150px;
   width: 1200px;
 }
@@ -36,7 +35,6 @@ export default {
 .w-e-text-container {
   height: 700px !important;
   background-color: white;
-  z-index: 10;
 }
 </style>
 

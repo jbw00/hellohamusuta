@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <router-link to="/"/>
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
     <!-- <BackGround/> -->
   </div>
 </template>

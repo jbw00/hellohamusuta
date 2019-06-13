@@ -193,4 +193,17 @@
       date = #{date,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <resultMap id="TypeIdAndName" type="com.hamusuta.hellohamusuta.model.custom_model.TypeIdAndName">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+  <select id="getTypeIdAndName" resultMap="TypeIdAndName">
+  SELECT
+      id,
+      NAME
+  FROM
+      type
+  </select>
 </mapper>

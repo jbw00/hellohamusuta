@@ -3,8 +3,12 @@ package com.hamusuta.hellohamusuta.dao;
 import com.hamusuta.hellohamusuta.model.Type;
 import com.hamusuta.hellohamusuta.model.TypeExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import com.hamusuta.hellohamusuta.model.custom_model.TypeIdAndName;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface TypeMapper {
     long countByExample(TypeExample example);
 
@@ -27,4 +31,6 @@ public interface TypeMapper {
     int updateByPrimaryKeySelective(Type record);
 
     int updateByPrimaryKey(Type record);
+
+    List<TypeIdAndName> getTypeIdAndName();
 }

@@ -4,7 +4,9 @@ import com.hamusuta.hellohamusuta.model.Article;
 import com.hamusuta.hellohamusuta.model.ArticleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ArticleMapper {
     long countByExample(ArticleExample example);
 

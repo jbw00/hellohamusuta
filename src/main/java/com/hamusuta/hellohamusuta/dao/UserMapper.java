@@ -4,8 +4,11 @@ import com.hamusuta.hellohamusuta.model.User;
 import com.hamusuta.hellohamusuta.model.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
+
     long countByExample(UserExample example);
 
     int deleteByExample(UserExample example);

@@ -10,7 +10,7 @@
       <template slot="prepend">图片</template>
     </el-input>
     <el-select class="select" v-model="value" placeholder="请选择">
-      <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+      <el-option v-for="item in options" :key="item.value" :label="item.name" :value="item.id"></el-option>
     </el-select>
     <el-input class="choseinput" placeholder="请输入前言" v-model="preface">
       <template slot="prepend">
@@ -22,7 +22,7 @@
         <el-checkbox v-model="checkedMusic">音乐</el-checkbox>
       </template>
     </el-input>
-    <Editor ref="editorChild"/>
+    <Editor ref="editorChild" class="editor"/>
     <el-button @click="getArticle" class="completed" type="info" round>完成编辑</el-button>
   </div>
 </template>
@@ -51,16 +51,16 @@ export default {
       picture: null
     };
   },
-  mounted() {
+  activated() {
     this.getArticleType();
   },
   methods: {
     //初始获取文章类型
     getArticleType: function() {
       this.$http
-        .get("/api/getArticleType")
+        .get("/type/gettypelist")
         .then(res => {
-          this.options = res.data.options;
+          this.options = res.data.data;
         })
         .catch(err => {
           alert(err);
@@ -131,6 +131,11 @@ export default {
   margin-top: 60px;
   margin-left: 700px;
   margin-bottom: 80px;
+}
+
+.editor {
+  margin-top: 180px;
+  z-index: -10;
 }
 </style>
 

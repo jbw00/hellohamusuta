@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+    <!--输出日志文件-->
+    <appender name="fileLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径-->
+            <fileNamePattern>${user.dir}/logs/springlog-%d</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <!--全局应用该日志配置-->
+    <root level="info">
+        <appender-ref ref = "consoleLog"/>
+        <appender-ref ref = "fileLog"/>
+    </root>
+    <logger name="com.hamusuta.hellohamusuta" level="info" additivity="false">
+        <appender-ref ref="fileLog" />
+        <appender-ref ref ="consoleLog"/>
+    </logger>
+</configuration>

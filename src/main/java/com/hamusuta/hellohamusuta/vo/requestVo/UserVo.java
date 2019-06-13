@@ -1,21 +1,18 @@
 package com.hamusuta.hellohamusuta.vo.requestVo;
 
+import io.swagger.annotations.ApiParam;
+
 public class UserVo {
 
-    private Integer id;
+    @ApiParam(value = "账户名",required = true)
     private String account;
+    @ApiParam(value = "用户名",required = true)
     private String userName;
+    @ApiParam(value = "用户密码",required = true)
     private String password;
+    @ApiParam(value = "用户邮箱",required = true)
     private String mail;
 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getAccount() {
         return account;

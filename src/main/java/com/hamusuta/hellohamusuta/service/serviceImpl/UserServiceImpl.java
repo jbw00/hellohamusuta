@@ -19,14 +19,13 @@ public class UserServiceImpl implements UserService {
         userMapper.insert(formatUser);
     }
 
-
+    //转化用户对象
     private User formatUser(UserVo user){
         User newUser = new User();
         newUser.setAccount(user.getAccount());
         newUser.setMail(user.getMail());
         newUser.setUserName(user.getUserName());
         newUser.setPassword(user.getPassword());
-        newUser.setId(user.getId());
         return newUser;
     }
 }
