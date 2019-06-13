@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/type")
-public class ArticleTypeController {
+public class TypeController {
 
     @Autowired
     private TypeService typeService;
