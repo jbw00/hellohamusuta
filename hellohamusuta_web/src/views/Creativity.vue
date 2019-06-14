@@ -31,6 +31,7 @@
 import TopGroundPicture from "@/components/TopGroundPicture.vue";
 import NavBar from "@/components/NavBar.vue";
 import Editor from "@/components/Editor.vue";
+import Qs from "qs";
 
 export default {
   name: "creativity",
@@ -83,22 +84,29 @@ export default {
         if (this.checkedMusic && this.preface == null) {
           alert("请填写音乐链接！");
         }
-        articleMessage.contents = this.$refs.editorChild.editorContent;
+        articleMessage.content = this.$refs.editorChild.editorContent;
         articleMessage.title = this.title;
-        articleMessage.value = this.value;
+        articleMessage.typeId = this.value;
         articleMessage.preface = this.preface;
         articleMessage.music = this.music;
         articleMessage.picture = this.picture;
-        //alert(JSON.stringify(articleMessage));
+        alert(JSON.stringify(articleMessage));
         //发送post请求
-        this.$http
-          .post("/api/testartic", { parmams: this.articleMessage })
-          .then(res => {
-            alert(res.data);
-          })
-          .catch(err => {
-            alert(err);
-          });
+        // this.$http
+        //   .post("/article/newarticle", { data: JSON.stringify(articleMessage) })
+        //   .then(res => {
+        //     alert(res.data);
+        //   })
+        //   .catch(err => {
+        //     alert(err);
+        //   });
+        this.$http({
+          method: "post",
+          url: "/article/newarticle",
+          data: articleMessage
+        }).then(res => {
+          alert(res.data.message);
+        });
       }
     }
   }
