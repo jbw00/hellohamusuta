@@ -13,7 +13,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://118.24.103.65:3306/hellohamusuta?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
     username: root
-    password: xxxxxxxxx
+    password: xxxxxxxxxx
     #--------------------------使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -35,3 +35,11 @@ mybatis:
 logging:
   config: classpath:logback-spring.xml
   path: ./logs
+
+
+#-----------------------pagehelper-分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

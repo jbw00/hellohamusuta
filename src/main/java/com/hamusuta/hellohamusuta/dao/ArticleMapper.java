@@ -3,6 +3,8 @@ package com.hamusuta.hellohamusuta.dao;
 import com.hamusuta.hellohamusuta.model.Article;
 import com.hamusuta.hellohamusuta.model.ArticleExample;
 import java.util.List;
+
+import com.hamusuta.hellohamusuta.vo.responseVo.ArticleIndexVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -35,4 +37,8 @@ public interface ArticleMapper {
     int updateByPrimaryKeyWithBLOBs(Article record);
 
     int updateByPrimaryKey(Article record);
+
+    List<ArticleIndexVo> searchArtIndex(@Param("index") Integer index);
+
+    List<ArticleIndexVo> searchArtPage(@Param("typeId") Integer typeId);
 }
