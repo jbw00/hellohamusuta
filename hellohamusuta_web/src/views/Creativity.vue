@@ -31,7 +31,7 @@
 import TopGroundPicture from "@/components/TopGroundPicture.vue";
 import NavBar from "@/components/NavBar.vue";
 import Editor from "@/components/Editor.vue";
-import Qs from "qs";
+// import Qs from "qs";
 
 export default {
   name: "creativity",
@@ -104,9 +104,13 @@ export default {
           method: "post",
           url: "/article/newarticle",
           data: articleMessage
-        }).then(res => {
-          alert(res.data.message);
-        });
+        })
+          .then(res => {
+            alert(res.data.message);
+          })
+          .catch(err => {
+            alert(err);
+          });
       }
     }
   }

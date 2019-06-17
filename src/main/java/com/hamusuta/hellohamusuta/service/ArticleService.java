@@ -20,4 +20,6 @@ public interface ArticleService {
     //根据id获取文章内容
     Article getAtricleById(Integer id);
 
+    //模糊查询文章目录
+    List<ArticleIndexVo> getAtricleByKeyWord(String keyword);
 }

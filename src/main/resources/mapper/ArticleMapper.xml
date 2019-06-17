@@ -350,4 +350,20 @@
         create_time DESC
   </select>
 
+  <select id="searchArtIndexByKeyWord" parameterType="string" resultType="com.hamusuta.hellohamusuta.vo.responseVo.ArticleIndexVo">
+    SELECT
+    id,
+    title,
+    preface,
+    picture
+    FROM
+    article
+    WHERE
+    <if test="keyword != null">
+      title LIKE '%'#{keyword,jdbcType=INTEGER}'%'
+    </if>
+    ORDER BY
+    create_time DESC
+  </select>
+
 </mapper>

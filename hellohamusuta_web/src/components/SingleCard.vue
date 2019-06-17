@@ -1,15 +1,17 @@
 <template>
   <div id="card">
     <el-row>
-      <el-col v-for="(o, index) in 4" :key="o" :offset="index > 0 ? 3 : 0" style="width:200px">
+      <el-col
+        v-for="(hotarticles, index) in hotarticles"
+        :key="hotarticles"
+        :offset="index > 0 ? 3 : 0"
+        style="width:200px"
+      >
         <el-card :body-style="{ padding: '0px'}">
-          <img
-            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-            class="image"
-          >
+          <img :src="hotarticles.picture" class="image">
           <div style="padding: 14px;">
-            <span>好吃的汉堡</span>
-            <span>sadsadasdasdadasdasdasdadasdsadasdasdasdasdad</span>
+            <span>{{hotarticles.title}}</span><br/>
+            <span>{{hotarticles.preface}}</span>
             <div class="bottom clearfix">
               <!-- <el-button type="danger" icon="el-icon-watermelon" class="like" circle></el-button> -->
               <el-button type="success" class="button" plain>&nbsp;瞅瞅？</el-button>
@@ -24,7 +26,27 @@
 <script>
 export default {
   name: "card",
-  data() {}
+  data() {
+    return {
+      hotarticles: ""
+    };
+  },
+  activated() {
+    this.getLestArticle();
+  },
+  methods: {
+    getLestArticle: function() {
+      this.$http
+        .get("/article/gethotart/4")
+        .then(res => {
+          this.hotarticles = res.data.data;
+          //alert(JSON.stringify(this.articles));
+        })
+        .catch(err => {
+          alert(err);
+        });
+    }
+  }
 };
 </script>
 
@@ -52,6 +74,7 @@ export default {
 
 .image {
   width: 100%;
+  height: 200px;
   display: block;
 }
 

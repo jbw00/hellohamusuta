@@ -1,8 +1,9 @@
 <template>
   <div id="carousel">
-    <el-carousel :interval="4000" type="card" height="400px">
-      <el-carousel-item v-for="item in 6" :key="item">
-        <h3 class="medium">{{ item }}</h3>
+    <el-carousel :interval="4000" type="card" height="500px">
+      <el-carousel-item v-for="art in lastarticles" :key="art">
+        <img class="backImg" :src="art.picture">
+        <p class="medium">{{ art.title }}</p>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -10,7 +11,28 @@
 
 <script>
 export default {
-  name: 'carousel'
+  name: "carousel",
+  data() {
+    return {
+      lastarticles: ""
+    };
+  },
+  activated() {
+    this.getLestArticle();
+  },
+  methods: {
+    getLestArticle: function() {
+      this.$http
+        .get("/article/getartindex/4")
+        .then(res => {
+          this.lastarticles = res.data.data;
+          //alert(JSON.stringify(this.articles));
+        })
+        .catch(err => {
+          alert(err);
+        });
+    }
+  }
 };
 </script>
 
@@ -29,5 +51,21 @@ export default {
 
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
+}
+
+.backImg {
+  width: 100%;
+  height: 100%;
+}
+
+.medium {
+  position: relative;
+  top: -90px;
+  background-color: rgba(96, 96, 96, 0.8);
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: white;
 }
 </style>

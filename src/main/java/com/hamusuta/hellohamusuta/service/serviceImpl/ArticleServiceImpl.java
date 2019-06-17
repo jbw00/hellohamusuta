@@ -39,6 +39,11 @@ public class ArticleServiceImpl implements ArticleService {
         return articleMapper.selectByPrimaryKey(id);
     }
 
+    @Override
+    public List<ArticleIndexVo> getAtricleByKeyWord(String keyword) {
+        return articleMapper.searchArtIndexByKeyWord(keyword);
+    }
+
     //格式化文章对象
     private Article formatArticle(ArticleVo articleVo) {
         Article article = new Article();
@@ -50,7 +55,7 @@ public class ArticleServiceImpl implements ArticleService {
         article.setTypeId(articleVo.getTypeId());
         article.setPreface(articleVo.getPerface());
         if (StringUtil.isNotEmpty(articleVo.getMusic())) article.setMusic(articleVo.getMusic());
-        if (StringUtil.isNotEmpty(articleVo.getPicture())) article.setMusic(articleVo.getPicture());
+        if (StringUtil.isNotEmpty(articleVo.getPicture())) article.setPicture(articleVo.getPicture());
         return article;
     }
 }

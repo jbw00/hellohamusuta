@@ -25,6 +25,11 @@ export default new Router({
       path: '/creativity',
       name: 'creativity',
       component: () => import('./views/Creativity.vue')
+    },
+    {
+      path: '/serchpage',
+      name: 'serchpage',
+      component: () => import('./views/SerchPage.vue')
     }
   ]
 })

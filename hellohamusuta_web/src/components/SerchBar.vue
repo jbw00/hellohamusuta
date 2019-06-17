@@ -8,17 +8,47 @@
       </div>
       <div>
         <form>
-          <input type="text" placeholder="  瓜子？">
-          <button type="submit">&nbsp;找找！</button>
+          <input v-model="keyword" type="text" placeholder="  瓜子？">
+          <router-link to="/SerchPage">
+            <button type="submit" @click="sarcharticle">&nbsp;找找！</button>
+          </router-link>
         </form>
       </div>
+      <router-view/>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SerchBar"
+  name: "SerchBar",
+  data() {
+    return {
+      keyword: null,
+      params: null
+    };
+  },
+  methods: {
+    sarcharticle: function() {
+      //跳转路由校验并向父页面发送相关查询参数
+      if (this.keyword == null) {
+        alert("请输入要查询的关键字后再进行查询！");
+        this.routerTo("nullKeyword");
+      } else {
+        this.routerTo(this.keyword);
+      }
+    },
+    routerTo: function(keyword) {
+      var ky = keyword;
+      this.$router.push({
+        name: "serchpage",
+        params: {
+          page: "1",
+          keyword: ky
+        }
+      });
+    }
+  }
 };
 </script>
 

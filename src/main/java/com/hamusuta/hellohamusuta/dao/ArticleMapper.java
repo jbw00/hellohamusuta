@@ -41,4 +41,6 @@ public interface ArticleMapper {
     List<ArticleIndexVo> searchArtIndex(@Param("index") Integer index);
 
     List<ArticleIndexVo> searchArtPage(@Param("typeId") Integer typeId);
+
+    List<ArticleIndexVo> searchArtIndexByKeyWord(@Param("keyword") String keyword);
 }
