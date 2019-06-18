@@ -24,18 +24,24 @@ export default {
   name: "SerchBar",
   data() {
     return {
-      keyword: null
+      keyword: null,
+      routerpath: "/serchpage"
     };
   },
   methods: {
     sarcharticle: function() {
-      alert(this.$route.path);
-      //跳转路由校验并向父页面发送相关查询参数
-      if (this.keyword == null) {
-        alert("请输入要查询的关键字后再进行查询！");
-        this.routerTo("nullKeyword");
+      //判断页面是否为搜索页面
+      if (this.$route.path == this.routerpath) {
+        //搜索页面向父组件传值
+        this.$emit("keyword", this.keyword);
       } else {
-        this.routerTo(this.keyword);
+        //跳转路由校验并向父页面发送相关查询参数
+        if (this.keyword == null) {
+          alert("请输入要查询的关键字后再进行查询！");
+          this.routerTo("nullKeyword");
+        } else {
+          this.routerTo(this.keyword);
+        }
       }
     },
     routerTo: function(keyword) {
