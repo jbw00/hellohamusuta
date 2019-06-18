@@ -8,8 +8,8 @@
       </div>
       <div>
         <form>
-          <input v-model="keyword" type="text" placeholder="  瓜子？">
-          <router-link to="/SerchPage">
+          <input v-model="keyword" type="text" placeholder="瓜子？">
+          <router-link to="/serchpage">
             <button type="submit" @click="sarcharticle">&nbsp;找找！</button>
           </router-link>
         </form>
@@ -24,12 +24,12 @@ export default {
   name: "SerchBar",
   data() {
     return {
-      keyword: null,
-      params: null
+      keyword: null
     };
   },
   methods: {
     sarcharticle: function() {
+      alert(this.$route.path);
       //跳转路由校验并向父页面发送相关查询参数
       if (this.keyword == null) {
         alert("请输入要查询的关键字后再进行查询！");
@@ -39,12 +39,10 @@ export default {
       }
     },
     routerTo: function(keyword) {
-      var ky = keyword;
       this.$router.push({
-        name: "serchpage",
-        params: {
-          page: "1",
-          keyword: ky
+        path: "/serchpage",
+        query: {
+          keyword: keyword
         }
       });
     }
@@ -105,6 +103,10 @@ export default {
 
 #homePageUINavigationBar button:after {
   color: #324b4e;
+}
+
+input {
+  text-align: center;
 }
 </style>
 

@@ -26,7 +26,7 @@ export default {
         .get("/article/getartindex/4")
         .then(res => {
           this.lastarticles = res.data.data;
-          //alert(JSON.stringify(this.articles));
+          //alert(JSON.stringify(this.lastarticles));
         })
         .catch(err => {
           alert(err);

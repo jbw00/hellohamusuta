@@ -65,8 +65,8 @@ public class ArticleController {
     }
 
     @ApiOperation(value = "根据关键词模糊查询文章", notes = "模糊查询文章目录")
-    @GetMapping(value = "/getartbykeyword/{keyword}")
-    public ResponseResult getAtricleByKeyWord(@PathVariable String keyword, @RequestParam(defaultValue = "1") Integer pageNum){
+    @PostMapping(value = "/getartbykeyword")
+    public ResponseResult getAtricleByKeyWord(@RequestParam("keyword") String keyword, @RequestParam("pageNum") Integer pageNum){
         //默认size是6
         PageHelper.startPage(pageNum, 6);
         List<ArticleIndexVo> articleIndex = articleService.getAtricleByKeyWord(keyword);

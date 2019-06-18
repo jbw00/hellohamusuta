@@ -3,7 +3,7 @@
     <el-row>
       <el-col
         v-for="(hotarticles, index) in hotarticles"
-        :key="hotarticles"
+        :key="hotarticles.title"
         :offset="index > 0 ? 3 : 0"
         style="width:200px"
       >

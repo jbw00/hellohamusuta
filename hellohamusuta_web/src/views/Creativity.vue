@@ -90,7 +90,7 @@ export default {
         articleMessage.preface = this.preface;
         articleMessage.music = this.music;
         articleMessage.picture = this.picture;
-        alert(JSON.stringify(articleMessage));
+        //alert(JSON.stringify(articleMessage));
         //发送post请求
         // this.$http
         //   .post("/article/newarticle", { data: JSON.stringify(articleMessage) })

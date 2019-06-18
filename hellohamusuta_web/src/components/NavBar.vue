@@ -29,7 +29,7 @@
         <el-menu-item index="4-3">摄影</el-menu-item>
       </el-submenu>
       <el-menu-item index="5">
-        <router-link to="/Creativity">剥瓜子</router-link>
+        <router-link to="/creativity">剥瓜子</router-link>
         <router-view/>
       </el-menu-item>
     </el-menu>
