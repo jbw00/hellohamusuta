@@ -13,23 +13,23 @@ export default new Router({
       name: 'home',
       component: Home
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    // },
+    //编辑页面
     {
       path: '/creativity',
       name: 'creativity',
       component: () => import('./views/Creativity.vue')
     },
+    //搜索页面
     {
       path: '/serchpage',
       name: 'serchpage',
       component: () => import('./views/SerchPage.vue')
+    },
+    //展示页面
+    {
+      path: '/showpage',
+      name: 'showpage',
+      component: () => import('./views/ShowPage.vue')
     }
   ]
 })

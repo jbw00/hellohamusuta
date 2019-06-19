@@ -47,7 +47,7 @@ public class ArticleController {
         return ResultGenerator.generatorSuccess(articleIndex);
     }
 
-    @ApiOperation(value = "获取文章目录", notes = "获取文章目录")
+    @ApiOperation(value = "根据ID获取文章目录", notes = "根据ID获取文章目录")
     @PostMapping(value = "/getartpage")
     public ResponseResult getAtriclePage(@RequestParam Integer typeId, @RequestParam(defaultValue = "1") Integer pageNum){
         //默认size是6

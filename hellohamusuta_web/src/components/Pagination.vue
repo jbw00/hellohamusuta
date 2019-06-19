@@ -1,7 +1,13 @@
 <template>
   <el-footer>
     <div id="pagination">
-      <el-pagination layout="prev, pager, next" :current-page.sync="currentPage" :total="total"></el-pagination>
+      <el-pagination
+        layout="prev, pager, next"
+        :current-page.sync="pages.pageNum"
+        :page-count="pages.pages"
+        @current-change="getpagenum"
+        background
+      ></el-pagination>
     </div>
   </el-footer>
 </template>
@@ -10,11 +16,14 @@
 export default {
   name: "pagination",
   data() {
-    return {
-      total: 5,
-      currentPage: 1
-    };
-  }
+    return {};
+  },
+  methods: {
+    getpagenum: function() {
+      this.$emit("pagenum", this.pages.pageNum);
+    }
+  },
+  props: ["pages"]
 };
 </script>
 

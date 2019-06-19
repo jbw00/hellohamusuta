@@ -46,7 +46,7 @@ export default {
     },
     routerTo: function(keyword) {
       this.$router.push({
-        path: "/serchpage",
+        path: this.routerpath,
         query: {
           keyword: keyword
         }

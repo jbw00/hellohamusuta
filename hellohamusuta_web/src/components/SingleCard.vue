@@ -10,11 +10,18 @@
         <el-card :body-style="{ padding: '0px'}">
           <img :src="hotarticles.picture" class="image">
           <div style="padding: 14px;">
-            <span>{{hotarticles.title}}</span><br/>
-            <span>{{hotarticles.preface}}</span>
+            <h4>{{hotarticles.title}}</h4>
+            <hr>
+            <h5>{{hotarticles.preface}}</h5>
             <div class="bottom clearfix">
-              <!-- <el-button type="danger" icon="el-icon-watermelon" class="like" circle></el-button> -->
-              <el-button type="success" class="button" plain>&nbsp;瞅瞅？</el-button>
+              <el-row>
+                <el-button type="danger" class="button" plain>
+                  <i class="el-icon-watermelon"/>赞啦！
+                </el-button>
+                <el-button type="success" class="button" plain>
+                  <i class="el-icon-view"/>瞅瞅？
+                </el-button>
+              </el-row>
             </div>
           </div>
         </el-card>
@@ -65,6 +72,7 @@ export default {
   width: 60px;
   height: 30px;
   float: right;
+  margin-left: 20px;
 }
 
 .like {
@@ -85,5 +93,10 @@ export default {
 
 .clearfix:after {
   clear: both;
+}
+
+h5 {
+  width: 260px;
+  height: 80px;
 }
 </style>

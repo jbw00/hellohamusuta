@@ -28,12 +28,11 @@ export default {
 <style scope lang="stylus">
 #editorElem {
   text-align: left;
-  margin-left: 150px;
   width: 1200px;
 }
 
 .w-e-text-container {
-  height: 700px !important;
+  height: 900px !important;
   background-color: white;
 }
 </style>

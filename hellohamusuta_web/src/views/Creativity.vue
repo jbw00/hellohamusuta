@@ -52,6 +52,7 @@ export default {
       picture: null
     };
   },
+  //获取文章类型
   activated() {
     this.getArticleType();
   },
@@ -92,14 +93,6 @@ export default {
         articleMessage.picture = this.picture;
         //alert(JSON.stringify(articleMessage));
         //发送post请求
-        // this.$http
-        //   .post("/article/newarticle", { data: JSON.stringify(articleMessage) })
-        //   .then(res => {
-        //     alert(res.data);
-        //   })
-        //   .catch(err => {
-        //     alert(err);
-        //   });
         this.$http({
           method: "post",
           url: "/article/newarticle",
@@ -120,33 +113,34 @@ export default {
 <style scoped lang = "stylus">
 .input {
   top: 80px;
-  width: 520px;
-  margin-left: 80PX;
+  width: 540px;
+  margin-left: 180PX;
   margin-top: 25px;
 }
 
 .select {
   top: 80px;
   width: 120px;
-  margin-left: 80PX;
+  margin-left: 180PX;
   margin-top: 25px;
 }
 
 .choseinput {
   top: 100px;
   width: 620px;
-  margin-left: 80PX;
+  margin-left: 180PX;
   margin-top: 25px;
 }
 
 .completed {
-  margin-top: 60px;
-  margin-left: 700px;
+  margin-top: 0px;
+  margin-left: 800px;
   margin-bottom: 80px;
 }
 
 .editor {
-  margin-top: 180px;
+  margin: 180px;
+  margin-left: 300PX;
   z-index: -10;
 }
 </style>
