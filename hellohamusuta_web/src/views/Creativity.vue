@@ -140,7 +140,7 @@ export default {
 
 .editor {
   margin: 180px;
-  margin-left: 300PX;
+  margin-left: 200PX;
   z-index: -10;
 }
 </style>

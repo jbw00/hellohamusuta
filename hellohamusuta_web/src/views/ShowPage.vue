@@ -56,7 +56,7 @@ export default {
             this.pageNum
         })
           .then(res => {
-            alert(JSON.stringify(res.data.data));
+            //alert(JSON.stringify(res.data.data));
             this.artresult = res.data.data.list;
             this.pages = res.data.data;
           })
@@ -88,7 +88,7 @@ export default {
 
 #singleart {
   text-align: center;
-  margin-left: 300px;
+  margin-left: 200px;
   margin-top: 200px;
 }
 </style>

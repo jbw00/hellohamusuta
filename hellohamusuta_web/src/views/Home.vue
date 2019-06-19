@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .singleCard {
   margin-bottom: 80px;
-  margin-left: 160px;
+  margin-left: 60px;
   text-align: center;
   line-height: 100%;
 }

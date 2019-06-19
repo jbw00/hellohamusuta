@@ -30,6 +30,12 @@ export default new Router({
       path: '/showpage',
       name: 'showpage',
       component: () => import('./views/ShowPage.vue')
+    },
+    //文章页面
+    {
+      path: '/artpage',
+      name: 'artpage',
+      component: () => import('./views/ArtPage.vue')
     }
   ]
 })

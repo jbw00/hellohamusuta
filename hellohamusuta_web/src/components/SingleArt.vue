@@ -2,10 +2,7 @@
   <div id="singleart">
     <div v-for="art in sercharts" :key="art" class="text item">
       <el-card class="box-card" shadow="hover">
-        <img
-          :src="art.picture"
-          class="image"
-        >
+        <img :src="art.picture" class="image">
         <h2>{{art.title}}</h2>
         <hr>
         <h3>{{art.preface}}</h3>
@@ -14,7 +11,7 @@
           <el-button type="danger" round>
             <i class="el-icon-watermelon"></i>赞啦！
           </el-button>
-          <el-button type="success" round>
+          <el-button type="success" round @click="sendartid(art.id)">
             <i class="el-icon-view"></i>瞅瞅！
           </el-button>
         </el-row>
@@ -28,10 +25,24 @@ export default {
   name: "singleart",
   data() {
     return {
-    //   sercharts: ""
+      routerpath: "/artpage"
     };
   },
-  props:["sercharts"]
+  props: ["sercharts"],
+  methods: {
+    //传递指定文章id路由至展示页面
+    sendartid: function(id){
+      this.routerTo(id);
+    },
+    routerTo: function(id) {
+      this.$router.push({
+        path: this.routerpath,
+        query: {
+          id: id
+        }
+      });
+    }
+  }
 };
 </script>
 
