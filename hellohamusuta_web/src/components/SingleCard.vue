@@ -15,11 +15,11 @@
             <h5>{{hotarticles.preface}}</h5>
             <div class="bottom clearfix">
               <el-row>
+                <el-button type="success" class="button" plain @click="sendartid(hotarticles.id)">
+                  <i class="el-icon-view"/>瞅瞅？
+                </el-button>
                 <el-button type="danger" class="button" plain>
                   <i class="el-icon-watermelon"/>赞啦！
-                </el-button>
-                <el-button type="success" class="button" plain>
-                  <i class="el-icon-view"/>瞅瞅？
                 </el-button>
               </el-row>
             </div>
@@ -35,13 +35,15 @@ export default {
   name: "card",
   data() {
     return {
-      hotarticles: ""
+      hotarticles: "",
+      routerpath: "/artpage"
     };
   },
   activated() {
     this.getLestArticle();
   },
   methods: {
+    //获取热帖
     getLestArticle: function() {
       this.$http
         .get("/article/gethotart/4")
@@ -52,6 +54,18 @@ export default {
         .catch(err => {
           alert(err);
         });
+    },
+    //传递指定文章id路由至展示页面
+    sendartid: function(id) {
+      this.routerTo(id);
+    },
+    routerTo: function(id) {
+      this.$router.push({
+        path: this.routerpath,
+        query: {
+          id: id
+        }
+      });
     }
   }
 };

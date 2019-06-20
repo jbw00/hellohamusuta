@@ -12,9 +12,9 @@
     <el-select class="select" v-model="value" placeholder="请选择">
       <el-option v-for="item in options" :key="item.value" :label="item.name" :value="item.id"></el-option>
     </el-select>
-    <el-input class="choseinput" placeholder="请输入前言" v-model="preface">
+    <el-input class="choseinput" placeholder="请输入前言" v-model="perface">
       <template slot="prepend">
-        <el-checkbox v-model="checkedPreface">前言</el-checkbox>
+        <el-checkbox v-model="checkedPerface">前言</el-checkbox>
       </template>
     </el-input>
     <el-input class="choseinput" placeholder="请输入音乐链接" v-model="music">
@@ -44,9 +44,9 @@ export default {
     return {
       options: "",
       value: "文章类型",
-      checkedPreface: false,
+      checkedPerface: false,
       checkedMusic: false,
-      preface: null,
+      perface: null,
       music: null,
       title: null,
       picture: null
@@ -79,16 +79,16 @@ export default {
       ) {
         alert("请填写标题、图片链接或是文章类型！");
       } else {
-        if (this.checkedPreface && this.music == null) {
+        if (this.checkedPerface && this.perface == null) {
           alert("请填写前言！");
         }
-        if (this.checkedMusic && this.preface == null) {
+        if (this.checkedMusic && this.music == null) {
           alert("请填写音乐链接！");
         }
         articleMessage.content = this.$refs.editorChild.editorContent;
         articleMessage.title = this.title;
         articleMessage.typeId = this.value;
-        articleMessage.preface = this.preface;
+        articleMessage.perface = this.perface;
         articleMessage.music = this.music;
         articleMessage.picture = this.picture;
         //alert(JSON.stringify(articleMessage));

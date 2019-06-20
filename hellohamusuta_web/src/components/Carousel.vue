@@ -2,7 +2,7 @@
   <div id="carousel">
     <el-carousel :interval="4000" type="card" height="500px">
       <el-carousel-item v-for="art in lastarticles" :key="art">
-        <img class="backImg" :src="art.picture">
+        <img class="backImg" :src="art.picture" @click="sendartid(art.id)">
         <p class="medium">{{ art.title }}</p>
       </el-carousel-item>
     </el-carousel>
@@ -14,13 +14,15 @@ export default {
   name: "carousel",
   data() {
     return {
-      lastarticles: ""
+      lastarticles: "",
+      routerpath: "/artpage"
     };
   },
   activated() {
     this.getLestArticle();
   },
   methods: {
+    //获取轮播页最新文章
     getLestArticle: function() {
       this.$http
         .get("/article/getartindex/4")
@@ -31,6 +33,18 @@ export default {
         .catch(err => {
           alert(err);
         });
+    },
+    //传递指定文章id路由至展示页面
+    sendartid: function(id) {
+      this.routerTo(id);
+    },
+    routerTo: function(id) {
+      this.$router.push({
+        path: this.routerpath,
+        query: {
+          id: id
+        }
+      });
     }
   }
 };
